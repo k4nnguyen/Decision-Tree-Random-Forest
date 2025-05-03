@@ -1,5 +1,4 @@
 # Sử dụng Decision Tree để phân loại bình luận tích cực / tiêu cực
-
 ## Tổng quan dự án
 Dự án sử dụng selenium để cào dữ liệu từ Google Map, tiền xử lý dữ liệu, vector hóa để tự huấn luyện model, sau đó sẽ sử dụng model đó để dự đoán các bình luận của các quán ăn khác
 
@@ -7,6 +6,9 @@ Dự án sử dụng selenium để cào dữ liệu từ Google Map, tiền x�
 
 ### Cài đặt các thư viện cần thiết cho chương trình:
 - Clone lại dự án:
+``` bash
+git clone https://github.com/k4nnguyen/Decision-Tree.git
+``` 
 - Mở terminal ở thư mục đó và chạy
 ``` bash
 pip install -r 'requirements.txt'
@@ -19,4 +21,7 @@ py setup_nltk.py
 
 ### Chạy thử code
 Chỉ cần chạy file main.py và nhập lần lượt tên quán để train model, và tên quán để dự đoán
+``` bash
+py main.py
+```
 
