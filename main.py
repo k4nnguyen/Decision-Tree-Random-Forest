@@ -53,7 +53,7 @@ def tinhGiaTri(df):
 def main():
     # Bước 1: Nhập tên cửa hàng bạn muốn thu thập review và dự đoán
     store_name = input("Nhập tên cửa hàng bạn muốn thu thập review (Ví dụ: Maru Trần Đại Nghĩa): ").strip()
-    predict_store = input("Nhập tên cửa hàng bạn muốn dự đoán bình luận: (Ví dụ: KFC Hoàng Quốc Việt)").strip()
+    predict_store = input("Nhập tên cửa hàng bạn muốn dự đoán bình luận (Ví dụ: KFC Hoàng Quốc Việt): ").strip()
     # Bước 2: Thu thập dữ liệu review từ cửa hàng
     crawl_reviews(store_name)
 
@@ -83,8 +83,8 @@ def main():
     df['Predicted_Label'] = predictions
     output_filepath = os.path.join("result", f"classified_{filename}")
     df.to_csv(output_filepath, index=False, encoding="utf-8")
-    veBieuDo(df)
     tinhGiaTri(df)
+    veBieuDo(df)
     print(f"💾 Đã phân loại sentiment và lưu vào file '{output_filepath}' thành công!")
 
 if __name__ == "__main__":
