@@ -20,6 +20,8 @@ py setup_nltk.py
 3. Vào thư mục crawl.py sửa executable_path="vị trí chromedriver.exe"
 
 ### Chạy thử code
+File list.input sẽ là các quán ăn mà các bạn muốn dùng để train model dựa trên các quán đó. 
+Nếu muốn chạy model sẵn có thì có thể comment phần crawl_batch() trong main.py
 Chỉ cần chạy file main.py và nhập lần lượt tên quán để train model, và tên quán để dự đoán
 ``` bash
 py main.py
