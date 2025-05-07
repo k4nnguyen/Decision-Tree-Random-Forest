@@ -26,13 +26,16 @@ py setup_nltk.py
 1. Tải Chromedriver phù hợp hệ điều hành tại: https://sites.google.com/chromium.org/driver/
 2. Giải nén và tìm kiếm vị trí của chromedriver.exe, ví dụ ổ của mình là G:/Selenium/chromedriver-win64/chromedriver.exe
 3. Vào thư mục crawl.py sửa executable_path="vị trí chromedriver.exe"
+Để kiểm tra phiên bản Chromedriver phù hợp (Bằng phiên bản chrome của máy), sử dụng trên thanh tìm kiếm:
+```bash
+chrome://settings/help
+```
 
 ### Chạy thử code
 
 1. File list.input sẽ là các quán ăn mà các bạn muốn dùng để train model dựa trên các quán đó.
 2. Nếu muốn chạy model sẵn có thì có thể comment phần crawl_batch() trong main.py
-3. Chỉ cần chạy file main.py và nhập lần lượt tên quán để train model, và tên quán để dự đoán
-
+3. Chỉ cần chạy file main.py và nhập tên quán để dự đoán dựa trên model mới nhất!
 ```bash
 py main.py
 ```
