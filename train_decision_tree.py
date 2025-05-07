@@ -7,7 +7,7 @@ from sklearn.tree import DecisionTreeClassifier
 
 def train_decision_tree():
     # Đường dẫn mới
-    data_dir = "G:/z/Python/BTL_Py/Code/data/Colab_Data"
+    data_dir = "data/Colab_Data"
     csv_files = [f for f in os.listdir(data_dir) if f.endswith(".csv")]
     if not csv_files:
         print("❌ Không tìm thấy file CSV trong thư mục Colab_Data.")

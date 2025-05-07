@@ -3,7 +3,7 @@ import shutil
 from crawl import crawl_reviews
 
 # Đường dẫn lưu cố định
-SAVE_DIR = r'G:/z/Python/BTL_Py/Code/data'
+SAVE_DIR = r'Code/data'
 os.makedirs(SAVE_DIR, exist_ok=True)
 
 def crawl_batch():
