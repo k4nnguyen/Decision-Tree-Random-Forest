@@ -6,6 +6,9 @@ from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_sc
 from saved_model import load_saved_model
 from train_decision_tree import train_decision_tree
 from crawl import crawl_reviews, chuanHoa
+from crawl_batch import crawl_batch
+from merge_csvf import merge_all_csv
+
 import joblib
 
 def veBieuDo(df):
@@ -23,7 +26,7 @@ def veBieuDo(df):
 
     plt.title("So sánh giữa Label thực và Dự đoán")
     plt.xlabel("Predicted Label")
-    plt.ylabel("True Label")
+    plt.ylabel("True Label") 
     plt.show()
 
 def tinhGiaTri(df):
@@ -41,7 +44,7 @@ def tinhGiaTri(df):
     recall = recall_score(y_true, y_pred, average='weighted', zero_division=0)
     f1 = f1_score(y_true, y_pred, average='weighted', zero_division=0)
 
-    # In ra bảng báo cáo classification
+    # In ra bảng báo cáo classificationa
     print("\n📊 Classification Report:")
     print(classification_report(y_true, y_pred, digits=3))
     print("\n✅ Đánh giá tổng thể:")
@@ -51,22 +54,15 @@ def tinhGiaTri(df):
     print(f"- F1 Score: {f1:.3f}")
 
 def main():
-    # Bước 1: Nhập tên cửa hàng bạn muốn thu thập review và dự đoán
-    store_name = input("Nhập tên cửa hàng bạn muốn thu thập review (Ví dụ: Maru Trần Đại Nghĩa): ").strip()
     predict_store = input("Nhập tên cửa hàng bạn muốn dự đoán bình luận (Ví dụ: KFC Hoàng Quốc Việt): ").strip()
-    # Bước 2: Thu thập dữ liệu review từ cửa hàng
-    crawl_reviews(store_name)
-
-    # Bước 3: Huấn luyện mô hình và lưu với tên cửa hàng
-    train_decision_tree(store_name)
-
+    #crawl_batch()
+    merged_path = merge_all_csv()
+    train_decision_tree()
     # Bước 4: Tải mô hình đã huấn luyện từ cửa hàng
-    model, vectorizer = load_saved_model(store_name)
-
+    model, vectorizer = load_saved_model()
     if model is None or vectorizer is None:
         print("❌ Không thể tải mô hình. Quá trình dừng lại.")
         return
-
     #Bước 5: Cào dữ liệu của cửa hàng muốn dự đoán
     crawl_reviews(predict_store)
     # Đọc dữ liệu từ file CSV của cửa hàng
