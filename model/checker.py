@@ -2,8 +2,8 @@ import joblib
 import numpy as np
 
 # Load mô hình và vectorizer
-model = joblib.load('merged1_model.pkl')
-vectorizer = joblib.load('merged1_vectorizer.pkl')
+model = joblib.load('merged_RF_model.pkl')
+vectorizer = joblib.load('merged_RF_vectorizer.pkl')
 
 # Lấy danh sách các từ (features) từ vectorizer
 feature_names = vectorizer.get_feature_names_out()

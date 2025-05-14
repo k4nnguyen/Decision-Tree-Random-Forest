@@ -1,0 +1,10 @@
+File crawl_batch(): Sử dụng list.input để đọc tên và tìm kiếm, cào dữ liệu các nhà hàng trong list bằng Selenium
+-> Merge hết các file csv vào 1 file duy nhất để huấn luyện
+- Với Decision tree:
+
++) Sử dụng TFidf để vector hóa các từ với 1000 đặc trưng, với giá trị là độ quan trọng của dữ liệu.
++) TFidf dựa trên TF(đo mức độ đặc trưng dựa trên số lần xuất hiện của từ) và idf đo độ hiếm của từ, là số tài liệu
+có chứa từ đó. Từ xuất hiện nhiều trong document mà hiếm trong cả tập dlieu -> từ quan trọng
++) Chia tệp dữ liệu thành 70,30. 70% huấn luyện và 30% test
+
++) Sau khi huấn luyện xong, sẽ lưu lại file model và file vectorizer vào folder model
