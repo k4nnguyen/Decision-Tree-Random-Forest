@@ -42,3 +42,9 @@ chrome://settings/help
 ```bash
 py main.py
 ```
+
+### Các file phụ
+1. check_important.py: Sử dụng để list ra 20 từ quan trọng nhất trong model và vẽ biểu đồ
+2. test_neg_pos.py: Sử dụng Tfidf để list ra từ tiêu cực và tích cực dựa trên file data csv
+3. tree_draw.py: Vẽ ra cây quyết định (Decision Tree) hoặc một cây nhỏ trong rừng (Random Forest) để trực quan hóa
+ 
