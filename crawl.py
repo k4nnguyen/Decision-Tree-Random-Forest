@@ -11,7 +11,7 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-
+from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 # Tải dữ liệu NLP
 #nltk.download('stopwords')
 #nltk.download('punkt')
@@ -22,7 +22,7 @@ from nltk.stem import WordNetLemmatizer
 
 stop_words = set(stopwords.words('english'))
 lemmatizer = WordNetLemmatizer()
-
+analyzer = SentimentIntensityAnalyzer()
 # Từ khóa để gán nhãn sentiment (có thể mở rộng thêm)
 tichCuc = [
     'good', 'delicious', 'amazing', 'great', 'excellent', 'tasty', 'fresh', 'friendly', 'fast', 'clean',
@@ -76,13 +76,23 @@ def chuanHoaReview(raw_text):
     return ' '.join(tokens)
 
 def labelWord(text):
-    text = text.lower()
-    if any(word in text for word in tichCuc):
+    scores = analyzer.polarity_scores(text)
+    compound = scores['compound']
+    if compound >=  0.05:
         return 1
-    elif any(word in text for word in tieuCuc):
+    elif compound <= -0.05:
+        return 0
+    # fallback lexicon nếu VADER trung tính
+    text_lower = text.lower()
+    pos_count = sum(1 for w in tokens if w in tichCuc)
+    neg_count = sum(1 for w in tokens if w in tieuCuc)
+
+    if pos_count > neg_count:
+        return 1
+    elif neg_count > pos_count:
         return 0
     else:
-        return -1  # không xác định
+        return -1
 
 def crawl_reviews(search_query):
     output_folder = "data"

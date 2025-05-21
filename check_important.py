@@ -3,8 +3,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Load mô hình và vectorizer
-model = joblib.load('model/merged_RF_model.pkl')
-vectorizer = joblib.load('model/merged_RF_vectorizer.pkl')
+model = joblib.load('model/merged_DT_model.pkl')
+vectorizer = joblib.load('model/merged_DT_vectorizer.pkl')
 
 # Lấy tên từ và importance
 feature_names = vectorizer.get_feature_names_out()

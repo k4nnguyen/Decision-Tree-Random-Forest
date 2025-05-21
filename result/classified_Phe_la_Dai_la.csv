@@ -4,13 +4,12 @@ word say place amazing,1,1,0
 good,1,1,1
 good tea,1,1,1
 nice drink,1,1,1
-phe la dai la coffee place worth experiencing hanoi comfortable space professional service shop possesses modern sophisticated design still retains cozy feeling bringing wonderful feeling relaxation,1,1,0
+phe la dai la coffee place worth experiencing hanoi comfortable space professional service shop possesses modern sophisticated design still retains cozy feeling bringing wonderful feeling relaxation,1,1,1
 shop clean spacious many chill shooting angle enthusiastic staff super cute drink reasonably priced affordable according taste drink moderately sweet everyones preference many incentive everyone support,1,1,1
 new security guard old doesnt actively guide customer park car service attitude lazy probably doesnt even know customer parking area even staff run counter tell,0,1,0
 sitting week straight table dirty like every day sitting well know manager face talking new staff sometimes staff member come take photo course,1,1,0
 enthusiastic staff welcoming drink advice quiet chill space super delicious drink come back many time,1,1,1
 shop located small quiet alley entering shop chill drink delicious staff cute especially last thursday went alone bit shop full table blackshirted guy,1,1,1
-clean restaurant delicious drink polite staff,1,1,1
 shop located corner bit difficult find first restaurant area also small crowded bit difficult find place,0,0,0
 ca phe la famous coffee shop hanoi known comfortable atmosphere quality service detailed review cafe,1,1,0
 tea shop truly ideal destination space cozy friendly beautifully decorated oolong tea delicious fresh brings great relaxation service staff enthusiastic agile always ready,1,1,1
@@ -18,6 +17,7 @@ good drink like matcha coco latte space quite chill,1,1,1
 every time order delivery today tried shop found quite ok waited minute drink arrive staff also helped accumulate point get musical note come back support restaurant long time,0,0,0
 price high delicious decided wait day long selfservice,1,1,1
 delicious drink enthusiastic staff spacious space quite clean shop located alley quiet suitable meeting group meeting,1,1,1
+clean restaurant delicious drink polite staff,1,1,1
 chill space enthusiastic attentive service staff really like tea staff,1,1,1
 shop beautiful staff super enthusiastic im shipper asked lot iced tea really like,1,1,1
 table chair left messy waiting area ship small obstructs people walking around,0,1,0
@@ -33,7 +33,7 @@ enthusiastic friendly staff food come quickly brocade delicious,1,1,1
 restaurant beautiful cozy food come faster establishment parking lot shop dog look quite cute,1,1,1
 come back pl dai la every still like one best staff enthusiastic cheerful attentive take care carefully delicious drink always love cf tea apricot jelly go super well,1,1,1
 restaurant chill da lat vibe combined camping decor drink delicious staff super cute friendly,1,1,1
-delicious drink friendly staff,1,1,1
+delicious drink enthusiastic staff,1,1,1
 pearl always delicious enthusiastic staff space okay conclusion okay,1,1,1
 enthusiastic staff delicious drink,1,1,1
 order never completed shop slow making item ordered time every order canceled shipper shop slow making item many shipper waiting,0,1,0
@@ -57,10 +57,10 @@ delicious drink beautiful space,1,1,1
 miniature dalat heart city study national economics often come study restaurant atmosphere chill noisy like restaurant ive visited favorite drink lychee tea tea strong aftertaste make lychee taste delicious,1,1,1
 jasmine milk oolong oolong pearl tea rich flavor drinking feel like milk tea sugar water love much sometimes crave ice cream even drinking every day cant,1,1,1
 table chair bit messy ordering staff didnt listen customer order kept recommending dish introduction like able answer lesson time ordered red velvet,1,1,0
-im lucky found drink shop heart hustle bustle capital peaceful space make feel extremely comfortable sitting product unique especially type pearl everyone try enthusiastic cute staff come back one day soon,1,1,0
+im lucky found drink shop heart hustle bustle capital peaceful space make feel extremely comfortable sitting product unique especially type pearl everyone try enthusiastic cute staff come back one day soon,1,1,1
 many staff take long time make thing parking security staff bow guest drink quality mediocre,0,1,0
 space beautiful drink take long time make even customer,1,1,1
-path bit difficult find located courtyard old dormitory vibe quite chill space bit cramped spacious parking space,0,1,0
+path bit difficult find located courtyard old dormitory vibe quite chill space bit cramped spacious parking space,0,1,1
 view restaurant quite nice however seating space spacious often sit porch winter make feel cold quality drink okay find price bit high compared quality drink,1,1,1
 restaurant seat come summer cant stand heat address difficult find took forever find plus point drink also okay overall drink ill never go back,0,1,0
 shop small chill staff cute polite delicious drink,1,1,1
@@ -80,25 +80,24 @@ restaurant space relaxing suitable chill staff friendly enthusiastic love foreve
 delicious drink enthusiastic staff,1,1,1
 several establishment seen staff enthusiastic supporting customer drink also stable reduce sweetness many side reduced still sweet,1,1,1
 drink delicious staff nice enthusiastic,1,1,1
-suitable sitting long period time summer restaurant crowded turning air conditioner room quite noisy quite hot outside,1,1,0
+suitable sitting long period time summer restaurant crowded turning air conditioner room quite noisy quite hot outside,1,0,0
 drink delicious staff enthusiastic welcome customer,1,1,1
 friendly staff delicious drink spacious airy seat,1,1,1
 nice little shop chill music oolong milk tea delicious rich tea flavor moderately sweet without harsh worth coming back,1,1,1
 delicious drink enthusiastic staff today ordered smell unpleasant staff recommended betel pearl without even trying couldnt stand smell,1,1,1
-delicious lychee tea friendly staff quick delivery open space,1,1,1
 drink delicious staff enthusiastic polite,1,1,1
 chill space delicious drink enthusiastic supportive staff vnd hehe,1,1,1
 strong tea comfortable space agile staff,1,1,1
 great experience space music hot bird surroundings dispel sadness,1,1,1
 clean facility enthusiastic staff delicious drink,1,1,1
 tea fragrant delicious fast service drunk establishment hanoi found dai la establishment best baristas right level,1,1,1
-delicious drink come quickly friendly staff,1,1,1
 extremely bad experience compliment really seeding afternoon waiting drink pm pm shop take long time slow make thing crowded anything dont say word ask say wait without even apologizing,0,0,0
 delicious drink big shop chill lot drink friendliest staff cashier,1,1,1
 great staff great drink,1,1,1
 parking attendant fastidious polite customer,1,1,0
 enthusiastic staff delicious brewed coffee airy space,1,1,1
 experience quite great staff enthusiastic funny quite like decor shop,1,1,1
+good experience delicious drink enthusiastic staff,1,1,1
 delicious drink enthusiastic staff,1,1,1
 space upstairs quiet drink delicious fast,1,1,1
 drink okay price bit high facade beautiful space quite narrow,1,1,1
@@ -106,25 +105,27 @@ delicious drink quick delivery quiet nd floor,1,1,1
 delicious drink suit taste come back,1,1,1
 delicious milk oolong roasted rice pearl taste strange small restaurant indoor seat fan outside,1,1,1
 actually space bit small went evening quite crowded go alley shop lit get lost follow light rest space tight service ok nothing say ordered got water quickly,1,1,1
+delicious drink come quickly friendly staff,1,1,1
 new rice silk delicious worth trying,1,1,1
 located chill alley delicious drink,1,1,1
-parking attendant extremely rude customer,0,0,0
+parking attendant extremely rude customer,0,1,0
 delicious drink enthusiastic service staff,1,1,1
 open space enthusiastic staff delicious drink come quickly,1,1,1
-used work came back today past worked renovated floor guest sit rd floor good outdoor space seeing old company develop like make happy,1,1,1
 enthusiastic staff delicious drink airy space,1,1,1
-phe la dai la facility caused company uncomfortable experience taking long make thing irresponsible staff bad explanation customer,1,0,0
+phe la dai la facility caused company uncomfortable experience taking long make thing irresponsible staff bad explanation customer,1,1,0
 fast food making enthusiastic staff come back,1,1,1
-poor staff facility restaurant mainly outdoor seating enough umbrella raining asked staff open umbrella complied noticed umbrella staff,0,0,0
+poor staff facility restaurant mainly outdoor seating enough umbrella raining asked staff open umbrella complied noticed umbrella staff,0,1,0
 place delicious staff cute,1,1,1
 friendly staff delicious drink,1,1,1
 delicious peach silk good space enthusiastic staff,1,1,1
+enthusiastic staff super delicious drink,1,1,1
 worked long time staff lethargic acting like chill done done ordered bottle water waited nearly minute didnt hurry would probably done half hour,0,0,0
 quiet restaurant food come quickly delicious coffee,1,1,1
 airy space delicious fresh peach drink,1,1,1
 delicious drink friendly staff,1,1,1
-tet staff worked fine went buy tet felt tired staff worked extremely long waited minute shop shopee guy waiting order,1,0,0
-last week came drink water didnt expect coffee alley sitting outside chill bit hot manager invited upstairs sit air conditioning cool bring clothes,1,1,1
+used work came back today past worked renovated floor guest sit rd floor good outdoor space seeing old company develop like make happy,1,1,1
+tet staff worked fine went buy tet felt tired staff worked extremely long waited minute shop shopee guy waiting order,1,1,0
+last week came drink water didnt expect coffee alley sitting outside chill bit hot manager invited upstairs sit air conditioning cool bring clothes,1,1,0
 staff cheerful enthusiastic especially manager anh hec dot,1,1,1
 staff cute friendly often quarrel isnt cute,1,1,1
 delicious brocade enthusiastic staff,1,1,1
@@ -134,19 +135,18 @@ staff lack enthusiasm finding parking difficult even though restaurant crowded f
 shop business attentively staff friendly,1,1,1
 hot inside there fan air conditioning already know go sit,1,1,1
 drink okay polite staff shop cramped floor coming shop noon around heat unbearable ive never coffee shop thats hot stuffy like steamer space small tiny air conditioner waving fan probably wont come back,1,1,1
-delicious drink enthusiastic staff,1,1,1
-security guard bar super bad say there space show help park car leave alone later come show u another place parked car right next,0,1,0
+security guard bar super bad say there space show help park car leave alone later come show u another place parked car right next,0,0,0
 delicious drink especially tapioca pearl available phe la ordering receiving drink took less minute space floor outdoor seating suitable cool day without,1,1,1
 ordered lang biang k drank like k lemon tea elsewhere cramped seating bad experience,0,0,0
 prepare delicious food quickly delicious tea,1,1,1
-delicious dalat friendly staff,1,1,1
 food delicious using still crave time time small space chill however hot summer plant wilt bit remember water plant,1,1,1
+delicious dalat friendly staff,1,1,1
 long wait slow work staff busy talking,0,1,0
 staff make item quickly enthusiastic specializes shooting heart customer vnd,1,1,1
 staff cute adorable accommodating guest making delicious food fast beautiful space chill afternoon worth coming back,1,1,1
 staff poor matter good drink cant save service attitude staff,1,1,1
 drink delicious take long time make staff professional wont stop,1,1,1
-open space modern gentle decoration sitting coffee shop weekend feel relaxing,1,1,0
+open space modern gentle decoration sitting coffee shop weekend feel relaxing,1,1,1
 staff attitude bad make long drink,0,0,0
 seat parking difficult instruction,0,1,0
 friendly staff delicious drink,1,1,1

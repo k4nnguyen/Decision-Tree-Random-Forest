@@ -12,9 +12,10 @@ vectorizer = joblib.load("model/merged_DT_vectorizer.pkl")
 #tree = model.estimators_[0]  # Bạn có thể đổi [1], [2], ...
 
 # Vẽ cây
-plt.figure(figsize=(30, 15))
+plt.figure(figsize=(15, 6))
 plot_tree(model,
-          max_depth=5,
+          # Nếu là RF thì đổi model thành tree
+          max_depth=3,
           feature_names=vectorizer.get_feature_names_out(),
           class_names=["Negative", "Positive"],
           filled=True,
