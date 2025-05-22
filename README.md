@@ -17,7 +17,7 @@ git clone https://github.com/k4nnguyen/Decision-Tree.git
 - Mở terminal ở thư mục đó và chạy
 
 ```bash
-pip install -r 'requirements.txt'
+pip install -r requirements.txt
 py setup_nltk.py
 ```
 
