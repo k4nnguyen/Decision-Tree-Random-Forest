@@ -12,6 +12,7 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
+from webdriver_manager.chrome import ChromeDriverManager
 # Tải dữ liệu NLP
 #nltk.download('stopwords')
 #nltk.download('punkt')
@@ -31,7 +32,7 @@ tichCuc = [
     'attentive', 'neat', 'beautiful', 'charming', 'quick', 'well-seasoned', 'generous', 'authentic', 'enjoyable', 'comfortable',
     'spotless', 'organized', 'smooth', 'balanced', 'succulent', 'gracious', 'reliable', 'professional', 'hearty', 'mouthwatering',
     'brilliant', 'exceptional', 'recommend', 'love', 'sweet', 'pleasantly', 'delightful', 'fine', 'welcomed', 'relaxing',
-    'efficient', 'perfectly', 'freshly', 'refreshing', 'spectacular', 'cheerful', 'fun', 'impressive', 'dedicated', 'nice-looking',
+    'efficient', 'perfectly', 'freshly', 'grefreshing', 'spectacular', 'cheerful', 'fun', 'impressive', 'dedicated', 'nice-looking',
     'reasonable', 'great-value', 'variety', 'helpful', 'fantasy', 'convenient', 'enticing', 'memorable', 'sparkling', 'grilled',
     'genuine', 'courteous', 'piping-hot', 'prompt', 'creative', 'soft', 'light', 'wonderful', 'satisfy', 'pleased',
     'respectful', 'decent', 'superb', 'well-made', 'fast-service', 'value-for-money', 'cooperative', 'warm', 'filling', 'fluffy'
@@ -101,8 +102,7 @@ def crawl_reviews(search_query):
     options = Options()
     options.add_argument("--start-maximized")
     service = Service(executable_path="G:/Selenium/chromedriver-win64/chromedriver.exe")  # Thay đổi đường dẫn đến chromedriver của bạn
-    driver = webdriver.Chrome(service=service, options=options)
-
+    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options) # Luôn tương thích với Chronium
     search_url = f"https://www.google.com/maps/search/{search_query.replace(' ', '+')}"
     driver.get(search_url)
 

@@ -3,17 +3,17 @@ from sklearn.tree import plot_tree
 import matplotlib.pyplot as plt
 
 # Load model và vectorizer
-model = joblib.load("model/merged_DT_model.pkl")
-vectorizer = joblib.load("model/merged_DT_vectorizer.pkl")
+model = joblib.load("model/merged_RF_model.pkl")
+vectorizer = joblib.load("model/merged_RF_vectorizer.pkl")
 # Thay đổi thành merged_RF_model.pkl và merged_RF_vectorizer.pkl nếu muốn dùng RF 
 
 
 # Với RF thì chỉ hiển thị được 1 cây nhỏ trong rừng
-#tree = model.estimators_[0]  # Bạn có thể đổi [1], [2], ...
+tree = model.estimators_[0]  # Bạn có thể đổi [1], [2], ...
 
 # Vẽ cây
 plt.figure(figsize=(15, 6))
-plot_tree(model,
+plot_tree(tree,
           # Nếu là RF thì đổi model thành tree
           max_depth=3,
           feature_names=vectorizer.get_feature_names_out(),
