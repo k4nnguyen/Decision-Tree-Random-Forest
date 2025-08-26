@@ -59,48 +59,38 @@ BTL_Py/
 
 ## 🔧 Cài đặt dự án
 
-1. Clone dự án:
+1. **Clone dự án:**
 
-   ```bash
-   git clone https://github.com/k4nnguyen/Decision-Tree-Random-Forest.git
-   cd Decision-Tree-Random-Forest
-   ```
+```bash
+git clone https://github.com/k4nnguyen/Decision-Tree-Random-Forest.git
+cd Decision-Tree-Random-Forest
+```
 
-2. Tạo môi trường ảo và cài đặt dependencies:
+2. **Tạo môi trường ảo và cài đặt dependencies:**
 
-   ```bash
-
-   ```
-
+```bash
 # Tạo môi trường ảo
-
 python -m venv venv
 
 # Kích hoạt môi trường ảo
-
 # Trên macOS/Linux:
-
 source venv/bin/activate
-
 # Trên Windows:
-
 venv\Scripts\activate
 
-# Cài đặt các thư viện Python cần thiết
-
+# Cài đặt các thư viện Python
 pip install -r requirements.txt
 
 # Chạy script setup_nltk.py để tải dữ liệu NLTK
-
 python features/setup_nltk.py
+```
 
-````
+3. **Chạy ứng dụng:**
 
-3. Chạy ứng dụng:
-   ```bash
-   cd app
-   python main.py
-````
+```bash
+cd app
+python main.py
+```
 
 ## 📚 Tài liệu tham khảo
 
