@@ -7,8 +7,10 @@ Dự án này thực hiện **phân loại cảm xúc của bình luận** (Sent
 ## 🎯 Mục tiêu
 
 - Hiểu và triển khai hai thuật toán phổ biến trong Machine Learning: **Decision Tree** và **Random Forest**.
+- Thực hành thu thập dữ liệu từ Google Maps bằng: **Selenium**
 - Ứng dụng vào bài toán thực tế: **Phân loại bình luận tích cực và tiêu cực**.
 - Tạo pipeline xử lý dữ liệu từ thu thập, tiền xử lý đến phân loại và đánh giá.
+- Vẽ được biểu đồ để trực quan hóa dữ liệu bằng **Seaborn** và **Matplotlib.pyplot**
 
 ## 🏗 Cấu trúc dự án
 
@@ -41,16 +43,16 @@ BTL_Py/
 
 ## 🛠 Công nghệ sử dụng
 
-- **Python 3.x**
-- **Selenium** (thu thập dữ liệu)
-- **Pandas, NumPy** (xử lý dữ liệu)
+- **Python 3.10**
+- **Selenium** (Thu thập dữ liệu)
+- **Pandas, NumPy** (Xử lý dữ liệu)
 - **Scikit-learn** (Decision Tree, Random Forest)
-- **Joblib** (lưu và tải mô hình)
+- **Joblib** (Lưu và tải mô hình)
 
 ## 🚀 Các tính năng chính
 
 - ✅ **Cào dữ liệu đánh giá từ Google Maps**
-- ✅ **Tiền xử lý dữ liệu** (chuẩn hóa, làm sạch, loại bỏ emoji)
+- ✅ **Tiền xử lý dữ liệu** (Chuẩn hóa, làm sạch, loại bỏ emoji)
 - ✅ **Huấn luyện mô hình phân loại sentiment**
 - ✅ **Đánh giá và xuất kết quả**
 - ✅ **Lưu và tái sử dụng mô hình**
@@ -67,19 +69,42 @@ BTL_Py/
 2. Tạo môi trường ảo và cài đặt dependencies:
 
    ```bash
-   python -m venv venv
-   source venv/bin/activate  # Trên Windows: venv\Scripts\activate
-   pip install -r requirements.txt
+
    ```
+
+# Tạo môi trường ảo
+
+python -m venv venv
+
+# Kích hoạt môi trường ảo
+
+# Trên macOS/Linux:
+
+source venv/bin/activate
+
+# Trên Windows:
+
+venv\Scripts\activate
+
+# Cài đặt các thư viện Python cần thiết
+
+pip install -r requirements.txt
+
+# Chạy script setup_nltk.py để tải dữ liệu NLTK
+
+python features/setup_nltk.py
+
+````
 
 3. Chạy ứng dụng:
    ```bash
    cd app
    python main.py
-   ```
+````
 
 ## 📚 Tài liệu tham khảo
 
+- [Selenium](https://www.selenium.dev/)
 - [Scikit-learn Documentation](https://scikit-learn.org/stable/)
 - [Google Maps Review Scraping](https://serpapi.com/maps-local-results)
 - [Machine Learning with Python](https://www.machinelearningplus.com)

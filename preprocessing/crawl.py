@@ -71,7 +71,6 @@ def crawl_reviews(search_query):
 
     options = Options()
     options.add_argument("--start-maximized")
-    service = Service(executable_path="G:/Selenium/chromedriver-win64/chromedriver.exe")  # Thay đổi đường dẫn đến chromedriver của bạn
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options) # Luôn tương thích với Chronium
     search_url = f"https://www.google.com/maps/search/{search_query.replace(' ', '+')}"
     driver.get(search_url)
