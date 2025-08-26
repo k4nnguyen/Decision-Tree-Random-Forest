@@ -233,7 +233,6 @@ python models/train_random_forest.py
 - Scikit-learn — `https://scikit-learn.org/stable/`
 - SERP API (Maps) — `https://serpapi.com/maps-local-results`
 - Machine Learning Plus — `https://www.machinelearningplus.com`
-- Tham khảo cách trình bày README và minh họa trực quan từ dự án tương tự: [YOLOv8 Detecting and Classifying Waste](https://github.com/k4nnguyen/YOLOv8_Detecting_and_Classifying_Waste)
 
 ### 📞 Liên hệ
 
