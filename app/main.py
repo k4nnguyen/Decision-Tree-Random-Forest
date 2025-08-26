@@ -4,6 +4,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+# Thêm parent folder vào sys.path để import modules
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, classification_report
@@ -14,7 +15,7 @@ from preprocessing.crawl import crawl_reviews, chuanHoa
 from preprocessing.crawl_batch import crawl_batch
 from preprocessing.merge_csvf import merge_all_csv
 
-# Lấy đường dẫn gốc dự án
+# Đường dẫn gốc
 BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 RAW_DATA_DIR = os.path.join(BASE_DIR, "data", "raw_data")
 RESULT_DATA_DIR = os.path.join(BASE_DIR, "result", "data")
@@ -79,26 +80,34 @@ def main():
         else:
             print("❌ Vui lòng nhập Y hoặc N.")
 
-    # 2. Merge dữ liệu nếu có thư mục raw_data
-    if not os.path.exists(RAW_DATA_DIR) or len(os.listdir(RAW_DATA_DIR)) == 0:
-        print("⚠️ Không có dữ liệu trong raw_data. Bỏ qua bước merge và train.")
+    # 2. Kiểm tra folder raw_data
+    if not os.path.exists(RAW_DATA_DIR):
+        print(f"⚠️ Thư mục {RAW_DATA_DIR} chưa tồn tại. Tạo mới.")
+        os.makedirs(RAW_DATA_DIR, exist_ok=True)
+
+    if len(os.listdir(RAW_DATA_DIR)) == 0:
+        print("⚠️ Chưa có dữ liệu trong raw_data. Bỏ qua bước merge và train.")
         return
 
+    # Merge CSV
     merged_path = merge_all_csv()
     train_decision_tree()
     train_random_forest()
 
-    # 3. Load 2 mô hình và vectorizer
+    # 3. Load mô hình
     model_DT, vectorizer_DT = load_saved_model(0)
     model_RF, vectorizer_RF = load_saved_model(1)
-    if model_DT is None or vectorizer_DT is None or model_RF is None or vectorizer_RF is None:
+    if None in [model_DT, vectorizer_DT, model_RF, vectorizer_RF]:
         print("❌ Không thể tải đầy đủ mô hình. Dừng lại.")
         return
 
-    # 4. Crawl review cho cửa hàng cần dự đoán
+    # 4. Crawl review cho cửa hàng
     crawl_reviews(predict_store)
     filename = chuanHoa(predict_store) + ".csv"
     filepath = os.path.join(RAW_DATA_DIR, filename)
+    if not os.path.exists(filepath):
+        print(f"⚠️ Không tìm thấy file {filepath} sau khi crawl. Dừng lại.")
+        return
     df = pd.read_csv(filepath)
 
     # 5. Tiền xử lý & dự đoán
@@ -108,7 +117,7 @@ def main():
     df['Predict_DT'] = model_DT.predict(vec_DT)
     df['Predict_RF'] = model_RF.predict(vec_RF)
 
-    # 6. Lưu kết quả vào ../result/data
+    # 6. Lưu kết quả
     os.makedirs(RESULT_DATA_DIR, exist_ok=True)
     output_filepath = os.path.join(RESULT_DATA_DIR, f"classified_{filename}")
     df.to_csv(output_filepath, index=False, encoding="utf-8")
