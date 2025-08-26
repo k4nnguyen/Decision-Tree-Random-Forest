@@ -1,5 +1,6 @@
 Review,Label,Predict_DT,Predict_RF
 delicious fried chicken crispy juicy fast service clean space great spot quick meal definitely come back,1,1,1
+good,1,1,1
 good service clean comfortable environment staff kind friendly,1,1,1
 ok,1,1,0
 ok,1,1,0
@@ -73,7 +74,7 @@ good,1,1,1
 great service,1,1,1
 good food,1,1,1
 great service,1,1,1
-enjoy fried chicken friend,1,1,0
+enjoy fried chicken friend,1,1,1
 quick delicious meal,1,1,1
 really good,1,1,1
 good,1,1,1
@@ -116,7 +117,6 @@ casual food,1,1,1
 terribly unhealthy,0,1,0
 good food kfc,1,1,1
 food good,1,1,1
-good,1,1,1
 restaurant st floor building company eat sometimes food okay wow jollibee,1,1,0
 said one first kfc establishment hanoi quality service dish good establishment year eating fried chicken greatly influenced,1,1,1
 staff unreasonable wont answer order took hour complete asked would take long staff said couldnt wait would cancel staff irresponsible dont sell online anymore,0,1,0
@@ -152,7 +152,7 @@ food ate today delicious chicken delicious price good voucher,1,1,1
 wonderful memorable experience enthusiastic staff good service,1,1,1
 called many time operator didnt answer called cancel order still tried go,1,1,0
 delicious hot crispy french fry,1,1,1
-im bored many time bought salty dried chicken wasnt delicious went kfc bought elsewhere different,0,1,1
+im bored many time bought salty dried chicken wasnt delicious went kfc bought elsewhere different,0,0,1
 love food staff much,1,1,1
 good experience food came quickly received right paying staff enthusiastic friendly food delicious plentiful restaurant many time never disappointed support long term,1,1,1
 received good quickly staff ok enthusiastic,1,1,1
@@ -171,7 +171,7 @@ feel quite satisfied food food many dish choose hot delicious thing bit small re
 hot food enthusiastic interview convenient,1,1,1
 delicious food nice staff,1,1,1
 manager ly funny enthusiastic food still hot experience wonderful,1,1,1
-placed order shopeefood app combo piece chicken juice nuggests clearly noted didnt get thigh chose change juice store still put thigh didnt change,1,0,0
+placed order shopeefood app combo piece chicken juice nuggests clearly noted didnt get thigh chose change juice store still put thigh didnt change,1,1,0
 delicious food fast service enthusiastic staff clean restaurant supportive,1,1,1
 super friendly staff come back support,1,1,1
 chicken delicious delicious hot crispy,1,1,1
@@ -189,21 +189,21 @@ delicious food,1,1,1
 good food friendly staff,1,1,1
 seems like cleaning bit early food isnt bad salty probably taste addition food decoration quite ok ate chicken ice cream,1,0,0
 restaurant clean staff enthusiastic food delicious flavorful comfortable satisfied,1,1,1
-spacious space enthusiastic staff,1,1,1
 enthusiastic staff quickly delivers food customer hot fresh,1,1,1
 cool,1,1,0
 kid fun party impressed,1,1,0
 delicious everything ok,1,1,1
 good service friendly staff enjoyed breakfast,1,1,1
-dont understand part chicken type doesnt ruffled shell combo people filling girl dont need order combo go eat buy piece individually full v boring,0,0,0
+dont understand part chicken type doesnt ruffled shell combo people filling girl dont need order combo go eat buy piece individually full v boring,0,1,0
 food good place fried well fried sweet potato soft chicken bad overall boring,1,1,1
 delicious chicken,1,1,1
 delicious food,1,1,1
 delicious spicy crispy chicken,1,1,1
 yo chicken burger cheap delicious food also served enthusiastic staff,1,1,1
 super delicious ice cream crispy fried chicken,1,1,1
+spacious space enthusiastic staff,1,1,1
 good quality enthusiastic service come back,1,1,1
-food like kfcs lot seat service bit slow,1,0,0
+food like kfcs lot seat service bit slow,1,1,1
 moeis chicken look appealing ha delicious crispy spicy chicken,1,1,1
 restaurant clean cool,1,1,1
 birthday amazing see next yearbb,1,1,0
@@ -241,7 +241,7 @@ delicious nack,1,1,1
 service ok,1,1,1
 response ok enthusiastic machine beautiful,1,1,1
 delicious food even though raining food still came quickly enthusiastic consulting staff detailed instruction use machine good experience,1,1,1
-food rice noodle burger chicken left ok order combo piece promotion apply customer ask want apply customer choose buy higher price,1,0,0
+food rice noodle burger chicken left ok order combo piece promotion apply customer ask want apply customer choose buy higher price,1,1,0
 great experience,1,1,1
 staff nice enthusiastic,1,1,1
 ok,1,1,0
@@ -256,12 +256,12 @@ friendly fast professional lovely staff cute especially m phuong food come quick
 restaurant serf attentively enthusiastically friendly customer manager good professional skill handle situation harmoniously come eat choose reliable longterm address,1,1,1
 good okay,1,1,1
 wonderful come back,1,1,0
-lovely staff cool restaurant,1,1,1
+lovely staff cool restaurant,1,1,0
 delicious food enthusiastic staff food come quickly like baked egg tart,1,1,1
-eat lot really like chicken noodle soup kid also order dish,1,1,0
+eat lot really like chicken noodle soup kid also order dish,1,1,1
 delicious food enthusiastic dedicated service vnd service,1,1,1
 eaten many time delicious cute adorable employee named duong siu eats,1,1,1
-popular food specializing chicken enthusiastic staff space bit crowded,1,0,1
+popular food specializing chicken enthusiastic staff space bit crowded,1,1,1
 delicious,1,1,1
 absolutely delicious point,1,1,1
 delicious food especially nanban rice super delicious bit crowded lunchtime wait food quality great,1,1,1
@@ -285,30 +285,3 @@ delicious food attentive staff,1,1,1
 food delicious staff polite enthusiastic place ive ever eaten come back many time place visit,1,1,1
 delicious food,1,1,1
 clean delicious food,1,1,1
-delicious food,1,1,1
-really bad placed order pm saw grab received good even increased shipping package fastest waited pm still didnt see anything refused delivery waited,1,1,0
-spicy chicken delicious,1,1,1
-beautiful staff,1,1,1
-dry boring machine problem,0,1,0
-chicken delicious staff restaurant friendly enthusiastic customer,1,1,1
-ok,1,1,0
-take good care,1,1,1
-crowded waited food minute cleaning staff quite clean comfortable space eaten many time,1,1,1
-okay,1,1,0
-spicy crispy fried chicken rich mixed cabbage french fry go well together relieve boredom fragrant sweet egg cake recommend people try,1,1,1
-delicious food,1,1,1
-sweet potato soft chicken crispy arrived first food came later person came later got food first even though restaurant empty staff ok,1,0,1
-awesome,1,1,0
-good,1,1,1
-delicious food welcoming staff,1,1,1
-better kfc elsewhere,1,1,0
-delicious food,1,1,1
-hot delicious chicken,1,1,1
-clothes came quickly im satisfied,1,1,1
-good delicious chicken,1,1,1
-delicious food,1,1,1
-delicious editor extremely pretty,1,1,1
-even though restaurant open long time service staff still enthusiastic friendly customer,1,1,1
-delicious food enthusiastic staff,1,1,1
-today may pm service quality bad waiting time long,0,0,0
-crispy potato delicious spicy chicken,1,1,1

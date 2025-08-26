@@ -1,0 +1,16 @@
+sequenceDiagram
+  participant U as User
+  participant P as preprocessing/merge_csvf.py
+  participant V as Vectorizer (TF-IDF)
+  participant DT as Decision Tree Trainer
+  participant RF as Random Forest Trainer
+  U->>P: Prepare merged.csv
+  P-->>U: merged.csv
+  U->>V: Fit/Transform text
+  V-->>DT: X_train, y_train
+  V-->>RF: X_train, y_train
+  DT->>DT: Train and evaluate
+  RF->>RF: Train and evaluate
+  DT-->>U: Save merged_DT_model.pkl
+  RF-->>U: Save merged_RF_model.pkl
+

@@ -1,0 +1,10 @@
+flowchart TD
+  A[Input CSV reviews] --> B[Load vectorizer]
+  B --> C[Transform to features]
+  C --> D{Select Model}
+  D -->|Decision Tree| E[merged_DT_model.pkl]
+  D -->|Random Forest| F[merged_RF_model.pkl]
+  E --> G[Predict sentiment]
+  F --> G
+  G --> H[Export classified_*.csv]
+

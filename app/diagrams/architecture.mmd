@@ -1,0 +1,11 @@
+graph TD
+  A[User] --> B[app/main.py]
+  B --> C[preprocessing/merge_csvf.py]
+  C --> D[data/Colab_Data/merged.csv]
+  B --> E[models/train_decision_tree.py]
+  B --> F[models/train_random_forest.py]
+  E --> G[models/model/merged_DT_model.pkl]
+  F --> H[models/model/merged_RF_model.pkl]
+  B --> I[models/saved_model.py]
+  I --> J[result/data/*.csv]
+

@@ -1,0 +1,11 @@
+flowchart LR
+  A[Google Maps Reviews] --> B[crawl/crawl.py]
+  B --> C[preprocessing/merge_csvf.py]
+  C --> D[data/Colab_Data/merged.csv]
+  D --> E[Vectorizer]
+  E --> F[Decision Tree]
+  E --> G[Random Forest]
+  F --> H[Predictions]
+  G --> H
+  H --> I[result/data/classified_*.csv]
+
