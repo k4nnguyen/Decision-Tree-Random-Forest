@@ -1,50 +1,91 @@
-# Sử dụng Decision Tree để phân loại bình luận tích cực / tiêu cực
+# Sentiment Classification using Decision Tree & Random Forest
 
-## Tổng quan dự án
+## 📌 Giới thiệu dự án
 
-Dự án sử dụng selenium để cào dữ liệu từ Google Map, tiền xử lý dữ liệu, vector hóa để tự huấn luyện model, sau đó sẽ sử dụng model đó để dự đoán các bình luận của các quán ăn khác
+Dự án này thực hiện **phân loại cảm xúc của bình luận** (Sentiment Analysis) bằng các thuật toán **Decision Tree** và **Random Forest**. Hệ thống bao gồm các bước: thu thập dữ liệu (cào từ Google Maps), tiền xử lý dữ liệu, huấn luyện mô hình, đánh giá mô hình, và triển khai kết quả phân loại.
 
-## Cách chạy chương trình
+## 🎯 Mục tiêu
 
-### Cài đặt các thư viện cần thiết cho chương trình:
+- Hiểu và triển khai hai thuật toán phổ biến trong Machine Learning: **Decision Tree** và **Random Forest**.
+- Ứng dụng vào bài toán thực tế: **Phân loại bình luận tích cực và tiêu cực**.
+- Tạo pipeline xử lý dữ liệu từ thu thập, tiền xử lý đến phân loại và đánh giá.
 
-- Clone lại dự án:
+## 🏗 Cấu trúc dự án
 
-```bash
-git clone https://github.com/k4nnguyen/Decision-Tree.git
+```
+BTL_Py/
+│
+├── app/
+│   └── main.py                # File chạy chính
+│
+├── crawl/
+│   ├── crawl.py               # Cào dữ liệu Google Maps
+│   ├── crawl_batch.py         # Cào nhiều địa điểm
+│
+├── models/
+│   ├── train_decision_tree.py # Huấn luyện Decision Tree
+│   ├── saved_model.py         # Lưu và tải mô hình
+│
+├── preprocessing/
+│   ├── merge_csvf.py          # Gộp file CSV
+│
+├── data/
+│   ├── raw_data/              # Dữ liệu gốc
+│   ├── processed_data/        # Dữ liệu sau tiền xử lý
+│
+├── result/
+│   └── data/                  # Kết quả phân loại
+│
+└── README.md
 ```
 
-- Mở terminal ở thư mục đó và chạy
+## 🛠 Công nghệ sử dụng
 
-```bash
-pip install -r requirements.txt
-py setup_nltk.py
-```
+- **Python 3.x**
+- **Selenium** (thu thập dữ liệu)
+- **Pandas, NumPy** (xử lý dữ liệu)
+- **Scikit-learn** (Decision Tree, Random Forest)
+- **Joblib** (lưu và tải mô hình)
 
-## Setup Chromedriver
+## 🚀 Các tính năng chính
 
-1. Tải Chromedriver phù hợp hệ điều hành tại: https://sites.google.com/chromium.org/driver/
-2. Giải nén và tìm kiếm vị trí của chromedriver.exe, ví dụ ổ của mình là G:/Selenium/chromedriver-win64/chromedriver.exe
-3. Vào thư mục crawl.py sửa executable_path="vị trí chromedriver.exe"
-   </br>
-   Để kiểm tra phiên bản Chromedriver phù hợp (Bằng phiên bản chrome của máy), sử dụng trên thanh tìm kiếm:
+- ✅ **Cào dữ liệu đánh giá từ Google Maps**
+- ✅ **Tiền xử lý dữ liệu** (chuẩn hóa, làm sạch, loại bỏ emoji)
+- ✅ **Huấn luyện mô hình phân loại sentiment**
+- ✅ **Đánh giá và xuất kết quả**
+- ✅ **Lưu và tái sử dụng mô hình**
 
-```bash
-chrome://settings/help
-```
+## 🔧 Cài đặt dự án
 
-### Chạy thử code
+1. Clone dự án:
 
-1. File list.input sẽ là các quán ăn mà các bạn muốn dùng để train model dựa trên các quán đó.
-2. Nếu muốn chạy model sẵn có thì có thể comment phần crawl_batch() trong main.py
-3. Chỉ cần chạy file main.py và nhập tên quán để dự đoán dựa trên model mới nhất!
+   ```bash
+   git clone https://github.com/k4nnguyen/Decision-Tree-Random-Forest.git
+   cd Decision-Tree-Random-Forest
+   ```
 
-```bash
-py main.py
-```
+2. Tạo môi trường ảo và cài đặt dependencies:
 
-### Các file phụ
-1. check_important.py: Sử dụng để list ra 20 từ quan trọng nhất trong model và vẽ biểu đồ
-2. test_neg_pos.py: Sử dụng Tfidf để list ra từ tiêu cực và tích cực dựa trên file data csv
-3. tree_draw.py: Vẽ ra cây quyết định (Decision Tree) hoặc một cây nhỏ trong rừng (Random Forest) để trực quan hóa
- 
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # Trên Windows: venv\Scripts\activate
+   pip install -r requirements.txt
+   ```
+
+3. Chạy ứng dụng:
+   ```bash
+   cd app
+   python main.py
+   ```
+
+## 📚 Tài liệu tham khảo
+
+- [Scikit-learn Documentation](https://scikit-learn.org/stable/)
+- [Google Maps Review Scraping](https://serpapi.com/maps-local-results)
+- [Machine Learning with Python](https://www.machinelearningplus.com)
+
+## 📞 Liên hệ
+
+- **Tác giả:** Nguyễn Kim An
+- **Email:** annguyenne2906@gmail.com
+- **GitHub:** [k4nnguyen](https://github.com/k4nnguyen)
