@@ -2,8 +2,8 @@ import os
 import pandas as pd
 
 def merge_all_csv(
-    source_folder="data", 
-    output_folder="data/Colab_Data", 
+    source_folder="../data/raw_data", 
+    output_folder="../data/Colab_Data", 
     output_filename="merged.csv"
 ):
     os.makedirs(output_folder, exist_ok=True)

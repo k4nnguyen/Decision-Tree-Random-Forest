@@ -5,7 +5,7 @@ import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 
 # 1. Load dữ liệu
-df = pd.read_csv("data/Colab_Data/merged.csv")
+df = pd.read_csv("../data/Colab_Data/merged.csv")
 reviews = df['Review'].astype(str).tolist()
 y = df['Label'].values
 

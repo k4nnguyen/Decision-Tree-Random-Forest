@@ -3,14 +3,14 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Load mô hình và vectorizer
-model = joblib.load('model/merged_DT_model.pkl')
-vectorizer = joblib.load('model/merged_DT_vectorizer.pkl')
+model = joblib.load('../models/model/merged_DT_model.pkl')
+vectorizer = joblib.load('../models/model/merged_DT_vectorizer.pkl')
 
 # Lấy tên từ và importance
 feature_names = vectorizer.get_feature_names_out()
 importances = model.feature_importances_
-# Lấy tên từ và importance
 features = vectorizer.get_feature_names_out()
+
 # Kiểm tra xem model có thuộc tính feature_importances_ không
 if hasattr(model, 'feature_importances_'):
     # Lấy chỉ số của top 20 từ có độ quan trọng cao nhất

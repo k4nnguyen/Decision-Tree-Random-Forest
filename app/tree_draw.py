@@ -3,9 +3,9 @@ from sklearn.tree import plot_tree
 import matplotlib.pyplot as plt
 
 # Load model và vectorizer
-model = joblib.load("model/merged_RF_model.pkl")
-vectorizer = joblib.load("model/merged_RF_vectorizer.pkl")
-# Thay đổi thành merged_RF_model.pkl và merged_RF_vectorizer.pkl nếu muốn dùng RF 
+# Thay đổi thành merged_RF_model.pkl và merged_RF_vectorizer.pkl nếu muốn dùng RF, tương tự với DT
+model = joblib.load("../models/model/merged_RF_model.pkl")
+vectorizer = joblib.load("../models/model/merged_RF_vectorizer.pkl")
 
 
 # Với RF thì chỉ hiển thị được 1 cây nhỏ trong rừng
