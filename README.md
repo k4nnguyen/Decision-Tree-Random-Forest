@@ -48,6 +48,9 @@ BTL_Py/
 - **Pandas, NumPy** (Xử lý dữ liệu)
 - **Scikit-learn** (Decision Tree, Random Forest)
 - **Joblib** (Lưu và tải mô hình)
+- **NLTK** (tokenization, stopwords, lemmatization)
+- **VaderSentiment** (sentiment scoring)
+- **Matplotlib, Seaborn** (trực quan hóa dữ liệu)
 
 ## 🚀 Các tính năng chính
 
