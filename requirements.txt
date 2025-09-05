@@ -1,98 +1,12 @@
-# Sentiment Analysis for Restaurant Reviews using Decision Tree & Random Forest
-
-## 📌 Mục tiêu dự án
-Dự án này xây dựng hệ thống phân tích cảm xúc (Sentiment Analysis) cho các bình luận về nhà hàng. Mục tiêu:
-- Thu thập dữ liệu review từ Google Maps.
-- Tiền xử lý dữ liệu bằng NLTK.
-- Phân loại bình luận tích cực/tiêu cực bằng Decision Tree và Random Forest.
-- Hiển thị kết quả và đánh giá mô hình bằng các biểu đồ trực quan.
-
-## 🛠 Công nghệ & Thư viện sử dụng
-- **Python 3.10+**
-- **Selenium + WebDriver Manager**: Tự động thu thập review từ Google Maps.
-- **Pandas**: Xử lý dữ liệu CSV.
-- **NLTK (Natural Language Toolkit)**: Tiền xử lý văn bản, tokenization, stopwords, lemmatization.
-- **VADER Sentiment**: Gán nhãn sentiment dựa trên từ điển.
-- **scikit-learn**: Decision Tree, Random Forest, vectorizer, metrics.
-- **Matplotlib & Seaborn**: Vẽ biểu đồ phân tích kết quả.
-- **ftfy**: Chuẩn hóa encoding văn bản.
-
-## 📚 Cấu trúc dự án
-```
-G:.
-│   README.md
-│
-├───app
-│       main.py
-│       check_important.py
-│       test_neg_pos.py
-│       tree_draw.py
-│
-├───config
-│       keywords.py  # Chứa danh sách từ tích cực/từ tiêu cực
-│
-├───data
-│   ├───raw_data   # Review thô từ Google Maps (CSV)
-│   └───Colab_Data # CSV hợp nhất
-│
-├───features
-│       setup_nltk.py
-│
-├───models
-│   │   saved_model.py
-│   │   train_decision_tree.py
-│   │   train_random_forest.py
-│   └───model
-│           *.pkl
-│
-├───preprocessing
-│       crawl.py
-│       crawl_batch.py
-│       merge_csvf.py
-│       list.input
-│
-└───result
-    └───data    # Kết quả phân loại CSV
-```
-
-## ⚙️ Các tính năng
-1. Thu thập review từ Google Maps.
-2. Tiền xử lý review bằng NLTK + ftfy + VADER.
-3. Gán nhãn tích cực/tiêu cực.
-4. Huấn luyện mô hình Decision Tree & Random Forest.
-5. Dự đoán sentiment cho nhà hàng mới từ mô hình đã train.
-6. Xuất kết quả ra CSV & hiển thị biểu đồ confusion matrix.
-
-## 🛠️ Cài đặt dự án
-1. Clone repo:
-```bash
-git clone https://github.com/k4nnguyen/Decision-Tree-Random-Forest.git
-cd Decision-Tree-Random-Forest
-```
-
-2. Cài đặt dependencies:
-```bash
-pip install -r requirements.txt
-python -m nltk.downloader stopwords punkt wordnet
-```
-
-3. Cấu hình ChromeDriver:
-- Đảm bảo ChromeDriver tương thích với trình duyệt.
-- Cập nhật đường dẫn `chromedriver.exe` trong `crawl.py` nếu cần.
-
-4. Chạy ứng dụng:
-```bash
-python app/main.py
-```
-
-## 📚 Tài liệu tham khảo
-- [NLTK Documentation](https://www.nltk.org/)
-- [VADER Sentiment Analysis](https://github.com/cjhutto/vaderSentiment)
-- [scikit-learn](https://scikit-learn.org/)
-- [Selenium WebDriver](https://www.selenium.dev/)
-
-## 📣 Liên hệ
-- **Nguyễn Kim An**  
-- Email: example@example.com  
-- GitHub: [k4nnguyen](https://github.com/k4nnguyen)
+numpy
+pandas
+scikit-learn
+matplotlib
+seaborn
+joblib
+nltk
+vaderSentiment
+selenium
+webdriver-manager
+ftfy
 
