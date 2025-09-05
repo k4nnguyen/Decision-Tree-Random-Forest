@@ -6,6 +6,7 @@ def load_saved_model(x):
     BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
     MODEL_DIR = os.path.join(BASE_DIR, "models", "model")
 
+    # Lưu lại mô hình Decision Tree (x = 0) và Random Forest (x = 1)
     if x == 0:
         model_filename = os.path.join(MODEL_DIR, "merged_DT_model.pkl")
         vectorizer_filename = os.path.join(MODEL_DIR, "merged_DT_vectorizer.pkl")

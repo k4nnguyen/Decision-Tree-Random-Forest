@@ -13,6 +13,7 @@ tree = model.estimators_[0]  # Bạn có thể đổi [1], [2], ...
 
 # Vẽ cây
 plt.figure(figsize=(15, 6))
+
 plot_tree(tree,
           # Nếu là RF thì đổi model thành tree
           max_depth=3,

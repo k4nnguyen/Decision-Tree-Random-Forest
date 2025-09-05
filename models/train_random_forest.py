@@ -16,12 +16,12 @@ def train_random_forest():
     if not csv_files:
         print("❌ Không tìm thấy file CSV trong thư mục Colab_Data.")
         return None, None
-
     csv_files.sort(key=lambda f: os.path.getmtime(os.path.join(BASE_DIR, f)), reverse=True)
     latest_file = os.path.join(BASE_DIR, csv_files[0])
     print(f"✅ Đọc dữ liệu từ file mới nhất: {latest_file}")
     df = pd.read_csv(latest_file)
 
+    # Cũng dùng Vectorizer TF-IDF, có 100 cây con, độ sâu mỗi cây là 10
     X = df['Review']
     y = df['Label']
 
@@ -41,9 +41,10 @@ def train_random_forest():
     )
     model.fit(X_train, y_train)
 
-    # Evaluate on test set and save visualizations
+    # Thử dự đoán trên tập test
     y_pred = model.predict(X_test)
 
+    # Trực quan hóa mô hình
     visualizations_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "result", "visualizations"))
     os.makedirs(visualizations_dir, exist_ok=True)
 
@@ -59,7 +60,7 @@ def train_random_forest():
     plt.savefig(cm_path, dpi=200)
     plt.close()
 
-    # Classification report (save as text and image)
+    # Classification report 
     report_text = classification_report(y_test, y_pred, digits=4)
     report_txt_path = os.path.join(visualizations_dir, "random_forest_classification_report.txt")
     with open(report_txt_path, "w", encoding="utf-8") as f:

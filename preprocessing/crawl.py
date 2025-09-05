@@ -16,6 +16,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 from config.keywords import tichCuc,tieuCuc
+
 stop_words = set(stopwords.words('english'))
 lemmatizer = WordNetLemmatizer()
 analyzer = SentimentIntensityAnalyzer()
@@ -49,12 +50,13 @@ def chuanHoaReview(raw_text):
 def labelWord(text):
     scores = analyzer.polarity_scores(text)
     compound = scores['compound']
-    if compound >=  0.05:
+    if compound >= 0.05:
         return 1
     elif compound <= -0.05:
         return 0
+
     # fallback lexicon nếu VADER trung tính
-    text_lower = text.lower()
+    tokens = text.split()  
     pos_count = sum(1 for w in tokens if w in tichCuc)
     neg_count = sum(1 for w in tokens if w in tieuCuc)
 
@@ -69,30 +71,36 @@ def crawl_reviews(search_query):
     output_folder = "../data/raw_data"
     os.makedirs(output_folder, exist_ok=True)
 
+    # Cấu hình cho Selenium
     options = Options()
     options.add_argument("--start-maximized")
-    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options) # Luôn tương thích với Chronium
+    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options) 
     search_url = f"https://www.google.com/maps/search/{search_query.replace(' ', '+')}"
     driver.get(search_url)
 
+    # Tìm tab Reviews
     try:
         review_tab = WebDriverWait(driver, 10).until(
             EC.element_to_be_clickable((By.XPATH, '//button[@role="tab" and contains(@aria-label, "Reviews")]'))
         )
         review_tab.click()
-        print("Đã click vào tab Reviews.")
+        print("✅ Đã click vào tab Reviews.")
     except:
-        print("Không tìm thấy tab Reviews.")
+        print("❌ Không tìm thấy tab Reviews.")
+        driver.quit()
+        return
 
+    # Lấy khung cuộn review
     try:
         scrollable_div = WebDriverWait(driver, 10).until(
             EC.presence_of_element_located((By.CSS_SELECTOR, "div.m6QErb.DxyBCb.kA9KIf.dS8AEf.XiKgde"))
         )
     except:
-        print("Không tìm thấy khung cuộn review chính.")
+        print("❌ Không tìm thấy khung cuộn review chính.")
         driver.quit()
-        exit()
+        return
 
+    # Cuộn xuống để load thêm review
     last_height = driver.execute_script("return arguments[0].scrollHeight", scrollable_div)
     start_time = time.time()
     max_wait = 60
@@ -101,40 +109,51 @@ def crawl_reviews(search_query):
         driver.execute_script("arguments[0].scrollTop = arguments[0].scrollHeight", scrollable_div)
         time.sleep(1.5)
         new_height = driver.execute_script("return arguments[0].scrollHeight", scrollable_div)
-        print(f"==> Cuộn vòng {i+1}, chiều cao: {new_height}")
+        print(f"🔄 Cuộn {i+1}, chiều cao: {new_height}")
 
         if new_height == last_height:
-            print("Không còn review mới để tải.")
+            print("⏹ Không còn review mới để tải.")
             break
-
         if time.time() - start_time > max_wait:
-            print("Hết thời gian cuộn.")
+            print("⏹ Hết thời gian cuộn.")
             break
 
         last_height = new_height
 
-    print("✅ Đã cuộn xong và sẵn sàng thu thập review.")
+    print("✅ Đã cuộn xong, bắt đầu thu thập review.")
 
-    review_blocks = driver.find_elements(By.CSS_SELECTOR, 'div.jJc9Ad')
+    # Lấy review block
+    review_blocks = driver.find_elements(By.CSS_SELECTOR, 'div.jftiEf')
+    print(f"🔎 Số block review tìm thấy: {len(review_blocks)}")
+
     data = []
-
-    for block in review_blocks:
+    for idx, block in enumerate(review_blocks, start=1):
         try:
             if block.find_elements(By.CSS_SELECTOR, 'div.GvZfFd > div.Jtu6Td'):
+                print(f"⏭ Bỏ qua block {idx} (reply của owner).")
                 continue
+
             review_text_elem = block.find_element(By.CLASS_NAME, 'wiI7pd')
-            raw_text = review_text_elem.text.strip()
+            raw_text = review_text_elem.get_attribute("textContent").strip()
+            print(f"[{idx}] Raw review:", raw_text)
+
             processed_text = chuanHoaReview(raw_text)
+            print(f"[{idx}] Processed:", processed_text)
+
             label = labelWord(processed_text)
+            print(f"[{idx}] Label:", label)
+
             if label != -1:
                 data.append({"Review": processed_text, "Label": label})
-        except Exception:
+        except Exception as e:
+            print(f"⚠️ Lỗi ở block {idx}: {e}")
             continue
 
     driver.quit()
 
+    # Xuất ra file CSV
     filename = chuanHoa(search_query) + ".csv"
     filepath = os.path.join(output_folder, filename)
     df = pd.DataFrame(data)
     df.to_csv(filepath, index=False, encoding="utf-8")
-    print(f"💾 Đã lưu {len(df)} review có nhãn vào file '{filepath}' thành công!")
+    print(f"💾 Đã lưu {len(df)} review có nhãn vào '{filepath}'")

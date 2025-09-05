@@ -22,7 +22,8 @@ def train_decision_tree():
     latest_file = os.path.join(BASE_DIR, csv_files[0])
     print(f"✅ Đọc dữ liệu từ file mới nhất: {latest_file}")
     df = pd.read_csv(latest_file)
-
+    
+    # Sử dụng hàm train_test_split để train model, ngoài ra dùng vectorizer là TF-IDF, cây có độ sâu là 10
     X = df['Review']
     y = df['Label']
 
@@ -36,9 +37,11 @@ def train_decision_tree():
     model = DecisionTreeClassifier(max_depth=10, random_state=42)
     model.fit(X_train, y_train)
 
-    # Evaluate on test set and save visualizations
+    # Sau đó dùng model train để dự đoán thử tập test
     y_pred = model.predict(X_test)
 
+
+    # Trực quan hóa phần ảnh và dự đoán
     visualizations_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "result", "visualizations"))
     os.makedirs(visualizations_dir, exist_ok=True)
 
@@ -69,6 +72,7 @@ def train_decision_tree():
     plt.savefig(report_img_path, dpi=200, bbox_inches='tight')
     plt.close()
 
+    # Lưu lại phần model bằng joblib
     os.makedirs(MODEL_DIR, exist_ok=True)
     model_filename = os.path.join(MODEL_DIR, "merged_DT_model.pkl")
     vectorizer_filename = os.path.join(MODEL_DIR, "merged_DT_vectorizer.pkl")
